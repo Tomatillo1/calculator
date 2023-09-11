@@ -11,21 +11,47 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 1rem;
+}
+
+@media (max-width:1024px){
+    .global {
+        gap:2rem;
+        height: 96%;
+        justify-content: end;
+    }
 }
 
 .screen{
     width: 60%;
     display: flex;
     justify-content: end;
+    align-items: center;
+    height: 10%;
 }
+
+@media (max-width:1024px){
+    .screen {
+        width: 90%;
+    }
+}
+
 
 .keyBoard {
     justify-content: start;
     width: 60%;
+    height: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1.75rem;
+}
+
+@media (max-width:1024px){
+    .keyBoard {
+        width: 90%;
+        height: 70%;
+    }
 }
 
 .reset, .addMoins, .pourcent {
@@ -88,4 +114,27 @@ p {
     font-family: Poppins;
     font-size: 4rem;
     margin: 0;
+}
+
+@media (max-width:1024px){
+    p {
+        font-size: 8rem;
+    }
+}
+
+
+@media (max-width:1024px){
+    .reset, .addMoins, .pourcent, .diviser, .fois, .moins, .plus, .egal, .sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule  {
+        width: 12rem;
+        height: 12rem;
+        font-size: 5rem;
+    }
+}
+
+@media (max-width:1024px){
+    .zero {
+        height: 12rem;
+        font-size: 5rem;
+        padding-left: 4rem;
+    }
 }
