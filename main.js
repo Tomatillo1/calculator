@@ -12,6 +12,10 @@ let buttonReset = document.querySelector(".reset");
 let buttonPlus = document.querySelector(".plus");
 let buttonEgal = document.querySelector(".egal");
 let buttonMoins = document.querySelector(".moins");
+let buttonDecimal = document.querySelector(".virgule");
+let buttonBack = document.querySelector(".back");
+let buttonFois = document.querySelector(".fois");
+let buttonPlusMoins = document.querySelector(".addMoins");
 
 buttonZero.addEventListener("click", (event)=>{
     let numberZero = 0
@@ -19,6 +23,9 @@ buttonZero.addEventListener("click", (event)=>{
     let divToChangeZero = document.getElementById("change").innerHTML
     if (divToChangeZero === "0") {
         document.getElementById("change").innerHTML = textZero
+    } else if (divToChangeZero === "Erreur") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = "C"
     } else {
         document.getElementById("change").innerHTML += textZero
     }
@@ -30,9 +37,13 @@ buttonOne.addEventListener("click", (event)=>{
     let divToChangeOne = document.getElementById("change").innerHTML
     if (divToChangeOne === "0") {
         document.getElementById("change").innerHTML = textOne
+    } else if (divToChangeOne === "Erreur") {
+        document.getElementById("change").innerHTML = "1"
     } else {
         document.getElementById("change").innerHTML += textOne
     }
+    let resetValueOne = "AC"
+    document.querySelector(".reset").innerHTML = resetValueOne
 });
 
 buttonTwo.addEventListener("click", (event)=>{
@@ -41,9 +52,13 @@ buttonTwo.addEventListener("click", (event)=>{
     let divToChangeTwo = document.getElementById("change").innerHTML
     if (divToChangeTwo === "0") {
         document.getElementById("change").innerHTML = textTwo
+    } else if (divToChangeTwo === "Erreur") {
+        document.getElementById("change").innerHTML = "2"
     } else {
         document.getElementById("change").innerHTML += textTwo
     }
+    let resetValueTwo = "AC"
+    document.querySelector(".reset").innerHTML = resetValueTwo
 });
 
 buttonThree.addEventListener("click", (event)=>{
@@ -52,9 +67,13 @@ buttonThree.addEventListener("click", (event)=>{
     let divToChangeThree = document.getElementById("change").innerHTML
     if (divToChangeThree === "0") {
         document.getElementById("change").innerHTML = textThree
+    } else if (divToChangeThree === "Erreur") {
+        document.getElementById("change").innerHTML = "3"
     } else {
         document.getElementById("change").innerHTML += textThree
     }
+    let resetValueThree = "AC"
+    document.querySelector(".reset").innerHTML = resetValueThree
 });
 
 buttonFour.addEventListener("click", (event)=>{
@@ -63,9 +82,13 @@ buttonFour.addEventListener("click", (event)=>{
     let divToChangeFour = document.getElementById("change").innerHTML
     if (divToChangeFour === "0") {
         document.getElementById("change").innerHTML = textFour
+    } else if (divToChangeFour === "Erreur") {
+        document.getElementById("change").innerHTML = "4"
     } else {
         document.getElementById("change").innerHTML += textFour
     }
+    let resetValueFour = "AC"
+    document.querySelector(".reset").innerHTML = resetValueFour
 });
 
 buttonFive.addEventListener("click", (event)=>{
@@ -74,9 +97,13 @@ buttonFive.addEventListener("click", (event)=>{
     let divToChangeFive = document.getElementById("change").innerHTML
     if (divToChangeFive === "0") {
         document.getElementById("change").innerHTML = textFive
+    } else if (divToChangeFive === "Erreur") {
+        document.getElementById("change").innerHTML = "5"
     } else {
         document.getElementById("change").innerHTML += textFive
     }
+    let resetValueFive = "AC"
+    document.querySelector(".reset").innerHTML = resetValueFive
 });
 
 buttonSix.addEventListener("click", (event)=>{
@@ -85,9 +112,13 @@ buttonSix.addEventListener("click", (event)=>{
     let divToChangeSix = document.getElementById("change").innerHTML
     if (divToChangeSix === "0") {
         document.getElementById("change").innerHTML = textSix
+    } else if (divToChangeSix === "Erreur") {
+        document.getElementById("change").innerHTML = "6"
     } else {
         document.getElementById("change").innerHTML += textSix
     }
+    let resetValueSix = "AC"
+    document.querySelector(".reset").innerHTML = resetValueSix
 });
 
 buttonSeven.addEventListener("click", (event)=>{
@@ -96,9 +127,13 @@ buttonSeven.addEventListener("click", (event)=>{
     let divToChangeSeven = document.getElementById("change").innerHTML
     if (divToChangeSeven === "0") {
         document.getElementById("change").innerHTML = textSeven
+    } else if (divToChangeSeven === "Erreur") {
+        document.getElementById("change").innerHTML = "7"
     } else {
         document.getElementById("change").innerHTML += textSeven
     }
+    let resetValueSeven = "AC"
+    document.querySelector(".reset").innerHTML = resetValueSeven
 });
 
 buttonEight.addEventListener("click", (event)=>{
@@ -107,9 +142,13 @@ buttonEight.addEventListener("click", (event)=>{
     let divToChangeEight = document.getElementById("change").innerHTML
     if (divToChangeEight === "0") {
         document.getElementById("change").innerHTML = textEight
+    } else if (divToChangeEight === "Erreur") {
+        document.getElementById("change").innerHTML = "8"
     } else {
         document.getElementById("change").innerHTML += textEight
     }
+    let resetValueEight = "AC"
+    document.querySelector(".reset").innerHTML = resetValueEight
 });
 
 buttonNine.addEventListener("click", (event)=>{
@@ -118,15 +157,21 @@ buttonNine.addEventListener("click", (event)=>{
     let divToChangeNine = document.getElementById("change").innerHTML
     if (divToChangeNine === "0") {
         document.getElementById("change").innerHTML = textNine
+    } else if (divToChangeNine === "Erreur") {
+        document.getElementById("change").innerHTML = "9"
     } else {
         document.getElementById("change").innerHTML += textNine
     }
+    let resetValueNine = "AC"
+    document.querySelector(".reset").innerHTML = resetValueNine
 });
 
 buttonReset.addEventListener("click", (event)=>{
     let reset = 0
+    let returnToC = "C"
     let changeToZero = reset.toString()
     document.getElementById("change").innerHTML = changeToZero
+    document.querySelector(".reset").innerHTML = returnToC
 });
 
 buttonPlus.addEventListener("click", (event)=>{
@@ -135,8 +180,24 @@ buttonPlus.addEventListener("click", (event)=>{
     let plusSlice = divToChangePlus.slice(-1)
     if(divToChangePlus === "0") {
         document.getElementById("change").innerHTML = "0"
-    } else if(plusSlice === "+" ) {
+    } else if (divToChangePlus === "Erreur") {
         document.getElementById("change").innerHTML += ""
+    } else if (plusSlice === "+" ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (plusSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (divToChangePlus === "-" ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (plusSlice === "-") {
+        let goToArrayPlus = divToChangePlus.split("")
+        goToArrayPlus.splice(-1, 1, "+")
+        let newStringPlus = goToArrayPlus.join("")
+        document.getElementById("change").innerHTML = newStringPlus
+    } else if (plusSlice === "*") {
+        let goToArrayPlusBis = divToChangePlus.split("")
+        goToArrayPlusBis.splice(-1, 1, "+")
+        let newStringPlusBis = goToArrayPlusBis.join("")
+        document.getElementById("change").innerHTML = newStringPlusBis
     } else {
         document.getElementById("change").innerHTML += plus
     }
@@ -148,15 +209,53 @@ buttonMoins.addEventListener("click", (event)=>{
     let moinsSlice = divToChangeMoins.slice(-1)
     if(divToChangeMoins === "0") {
         document.getElementById("change").innerHTML = "0"
+    } else if (divToChangeMoins === "Erreur") {
+        document.getElementById("change").innerHTML += ""
     } else if(moinsSlice === "-" ) {
         document.getElementById("change").innerHTML += ""
+    } else if(moinsSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
     } else if (moinsSlice === "+") {
-        let goToArray = divToChangeMoins.split("")
-        goToArray.splice(-1, 1, "-")
-        let newString = goToArray.join("")
-        document.getElementById("change").innerHTML = newString
+        let goToArrayMoins = divToChangeMoins.split("")
+        goToArrayMoins.splice(-1, 1, "-")
+        let newStringMoins = goToArrayMoins.join("")
+        document.getElementById("change").innerHTML = newStringMoins
+    } else if (moinsSlice === "*") {
+        let goToArrayMoinsBis = divToChangeMoins.split("")
+        goToArrayMoinsBis.splice(-1, 1, "-")
+        let newStringMoinsBis = goToArrayMoinsBis.join("")
+        document.getElementById("change").innerHTML = newStringMoinsBis
     } else {
         document.getElementById("change").innerHTML += moins
+    }
+});
+
+buttonFois.addEventListener("click", (event)=>{
+    let fois = "*"
+    let divToChangeFois = document.getElementById("change").innerHTML
+    let foisSlice = divToChangeFois.slice(-1)
+    if(divToChangeFois === "0") {
+        document.getElementById("change").innerHTML = "0"
+    } else if (divToChangeFois === "Erreur") {
+        document.getElementById("change").innerHTML += ""
+    } else if(foisSlice === "*" ) {
+        document.getElementById("change").innerHTML += ""
+    } else if(foisSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (divToChangeFois === "-") {
+        document.getElementById("change").innerHTML += ""
+    } else if (foisSlice === "+") {
+        let goToArrayFois = divToChangeFois.split("")
+        goToArrayFois.splice(-1, 1, "*")
+        let newStringFois = goToArrayFois.join("")
+        document.getElementById("change").innerHTML = newStringFois
+    } else if (foisSlice === "-") {
+        let goToArrayFoisBis = divToChangeFois.split("")
+        goToArrayFoisBis.splice(-1, 1, "*")
+        let newStringFoisBis = goToArrayFoisBis.join("")
+        document.getElementById("change").innerHTML = newStringFoisBis
+    } else {
+        document.getElementById("change").innerHTML += fois
     }
 });
 
@@ -165,3 +264,101 @@ buttonEgal.addEventListener("click", (event)=>{
     let result = eval(takeTheCalcul)
     document.getElementById("change").innerHTML = result
 });
+
+buttonDecimal.addEventListener("click", (event)=>{
+    let decimal = "."
+    let divAddDecimal = document.getElementById("change").innerHTML
+    let decimalSlice = divAddDecimal.slice(-1)
+    if (divAddDecimal === "0") {
+        document.getElementById("change").innerHTML = "0"
+    } else if (decimalSlice === "+") {
+        document.getElementById("change").innerHTML += ""
+    } else if (decimalSlice === "-") {
+        document.getElementById("change").innerHTML += ""
+    } else if (decimalSlice === ".") {
+        document.getElementById("change").innerHTML += ""
+    } else if (decimalSlice === "*") {
+        document.getElementById("change").innerHTML += ""
+    } else {
+        document.getElementById("change").innerHTML += decimal
+    }
+});
+
+buttonBack.addEventListener("click", (event)=>{
+    let divForBack = document.getElementById("change").innerHTML
+    let backToC = "C"
+    if (divForBack === "0") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "1") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "2") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "3") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "4") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "5") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "6") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "7") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "8") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "9") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "Erreur") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "-") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
+    } else {
+        let goToArrayBack = divForBack.split ("")
+        goToArrayBack.splice(-1)
+        let NewStringBack = goToArrayBack.join("")
+        document.getElementById("change").innerHTML = NewStringBack
+    }
+});
+
+buttonPlusMoins.addEventListener("click", (event)=>{
+    let addMoins = "-"
+    let divToAddMoins = document.getElementById("change").innerHTML
+    let addMoinsSlice = divToAddMoins.slice(-1)
+    let backC = "C"
+    let goToResetAC = "AC"
+    if (divToAddMoins === "0") {
+        document.getElementById("change").innerHTML = addMoins
+        document.querySelector(".reset").innerHTML = goToResetAC
+    } else if (divToAddMoins === "-") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backC
+    } else if (addMoinsSlice === "-") {
+        let goToArrayMoinsPlus = divToAddMoins.split("")
+        goToArrayMoinsPlus.splice(-1, 1, "+")
+        let newStringMoinsPlus = goToArrayMoinsPlus.join("")
+        document.getElementById("change").innerHTML = newStringMoinsPlus
+    } else if (addMoinsSlice === "+") {
+        let goToArrayMoinsPlusBis = divToAddMoins.split("")
+        goToArrayMoinsPlusBis.splice(-1, 1, "-")
+        let newStringMoinsPlusBis = goToArrayMoinsPlusBis.join("")
+        document.getElementById("change").innerHTML = newStringMoinsPlusBis
+    } else {
+        document.getElementById("change").innerHTML += addMoins
+    }
+});
+
+
+window.onerror = function(event) {
+    document.getElementById("change").innerHTML = "Erreur"
+};
