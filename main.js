@@ -16,6 +16,9 @@ let buttonDecimal = document.querySelector(".virgule");
 let buttonBack = document.querySelector(".back");
 let buttonFois = document.querySelector(".fois");
 let buttonPlusMoins = document.querySelector(".addMoins");
+let buttonDivision = document.querySelector(".diviser");
+let saveValue = localStorage.getItem("theKey")
+document.getElementById("special").innerHTML = saveValue
 
 buttonZero.addEventListener("click", (event)=>{
     let numberZero = 0
@@ -25,7 +28,7 @@ buttonZero.addEventListener("click", (event)=>{
         document.getElementById("change").innerHTML = textZero
     } else if (divToChangeZero === "Erreur") {
         document.getElementById("change").innerHTML = "0"
-        document.querySelector(".reset").innerHTML = "C"
+        document.querySelector(".reset").innerHTML = "AC"
     } else {
         document.getElementById("change").innerHTML += textZero
     }
@@ -42,7 +45,7 @@ buttonOne.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textOne
     }
-    let resetValueOne = "AC"
+    let resetValueOne = "C"
     document.querySelector(".reset").innerHTML = resetValueOne
 });
 
@@ -57,7 +60,7 @@ buttonTwo.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textTwo
     }
-    let resetValueTwo = "AC"
+    let resetValueTwo = "C"
     document.querySelector(".reset").innerHTML = resetValueTwo
 });
 
@@ -72,7 +75,7 @@ buttonThree.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textThree
     }
-    let resetValueThree = "AC"
+    let resetValueThree = "C"
     document.querySelector(".reset").innerHTML = resetValueThree
 });
 
@@ -87,7 +90,7 @@ buttonFour.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textFour
     }
-    let resetValueFour = "AC"
+    let resetValueFour = "C"
     document.querySelector(".reset").innerHTML = resetValueFour
 });
 
@@ -102,7 +105,7 @@ buttonFive.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textFive
     }
-    let resetValueFive = "AC"
+    let resetValueFive = "C"
     document.querySelector(".reset").innerHTML = resetValueFive
 });
 
@@ -117,7 +120,7 @@ buttonSix.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textSix
     }
-    let resetValueSix = "AC"
+    let resetValueSix = "C"
     document.querySelector(".reset").innerHTML = resetValueSix
 });
 
@@ -132,7 +135,7 @@ buttonSeven.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textSeven
     }
-    let resetValueSeven = "AC"
+    let resetValueSeven = "C"
     document.querySelector(".reset").innerHTML = resetValueSeven
 });
 
@@ -147,7 +150,7 @@ buttonEight.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textEight
     }
-    let resetValueEight = "AC"
+    let resetValueEight = "C"
     document.querySelector(".reset").innerHTML = resetValueEight
 });
 
@@ -162,13 +165,13 @@ buttonNine.addEventListener("click", (event)=>{
     } else {
         document.getElementById("change").innerHTML += textNine
     }
-    let resetValueNine = "AC"
+    let resetValueNine = "C"
     document.querySelector(".reset").innerHTML = resetValueNine
 });
 
 buttonReset.addEventListener("click", (event)=>{
     let reset = 0
-    let returnToC = "C"
+    let returnToC = "AC"
     let changeToZero = reset.toString()
     document.getElementById("change").innerHTML = changeToZero
     document.querySelector(".reset").innerHTML = returnToC
@@ -198,6 +201,11 @@ buttonPlus.addEventListener("click", (event)=>{
         goToArrayPlusBis.splice(-1, 1, "+")
         let newStringPlusBis = goToArrayPlusBis.join("")
         document.getElementById("change").innerHTML = newStringPlusBis
+    } else if (plusSlice === "/") {
+        let goToArrayPlusT = divToChangePlus.split("")
+        goToArrayPlusT.splice(-1, 1, "+")
+        let newStringPlusT = goToArrayPlusT.join("")
+        document.getElementById("change").innerHTML = newStringPlusT
     } else {
         document.getElementById("change").innerHTML += plus
     }
@@ -225,6 +233,11 @@ buttonMoins.addEventListener("click", (event)=>{
         goToArrayMoinsBis.splice(-1, 1, "-")
         let newStringMoinsBis = goToArrayMoinsBis.join("")
         document.getElementById("change").innerHTML = newStringMoinsBis
+    } else if (moinsSlice === "/") {
+        let goToArrayMoinsT = divToChangeMoins.split("")
+        goToArrayMoinsT.splice(-1, 1, "-")
+        let newStringMoinsT = goToArrayMoinsT.join("")
+        document.getElementById("change").innerHTML = newStringMoinsT
     } else {
         document.getElementById("change").innerHTML += moins
     }
@@ -254,15 +267,58 @@ buttonFois.addEventListener("click", (event)=>{
         goToArrayFoisBis.splice(-1, 1, "*")
         let newStringFoisBis = goToArrayFoisBis.join("")
         document.getElementById("change").innerHTML = newStringFoisBis
+    } else if (foisSlice === "/") {
+        let goToArrayFoisT = divToChangeFois.split("")
+        goToArrayFoisT.splice(-1, 1, "*")
+        let newStringFoisT = goToArrayFoisT.join("")
+        document.getElementById("change").innerHTML = newStringFoisT
     } else {
         document.getElementById("change").innerHTML += fois
     }
 });
 
+buttonDivision.addEventListener("click", (event)=>{
+    let diviser = "/"
+    let divToChangeDivision = document.getElementById("change").innerHTML
+    let divisionSlice = divToChangeDivision.slice(-1)
+    if(divToChangeDivision === "0") {
+        document.getElementById("change").innerHTML = "0"
+    } else if (divToChangeDivision === "Erreur") {
+        document.getElementById("change").innerHTML += ""
+    } else if(divisionSlice === "/" ) {
+        document.getElementById("change").innerHTML += ""
+    } else if(divisionSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (divToChangeDivision === "-") {
+        document.getElementById("change").innerHTML += ""
+    } else if (divisionSlice === "+") {
+        let goToArrayDivision = divToChangeDivision.split("")
+        goToArrayDivision.splice(-1, 1, "/")
+        let newStringDivision = goToArrayDivision.join("")
+        document.getElementById("change").innerHTML = newStringDivision
+    } else if (divisionSlice === "-") {
+        let goToArrayDivisionBis = divToChangeDivision.split("")
+        goToArrayDivisionBis.splice(-1, 1, "/")
+        let newStringDivisionBis = goToArrayDivisionBis.join("")
+        document.getElementById("change").innerHTML = newStringDivisionBis
+    } else if (divisionSlice === "*") {
+        let goToArrayDivisionT = divToChangeDivision.split("")
+        goToArrayDivisionT.splice(-1, 1, "/")
+        let newStringDivisionT = goToArrayDivisionT.join("")
+        document.getElementById("change").innerHTML = newStringDivisionT
+    } else {
+        document.getElementById("change").innerHTML += diviser
+    }
+});
+
 buttonEgal.addEventListener("click", (event)=>{
     let takeTheCalcul = document.getElementById("change").innerHTML
+    document.getElementById("special").innerHTML = takeTheCalcul + " = "
     let result = eval(takeTheCalcul)
     document.getElementById("change").innerHTML = result
+    document.getElementById("special").innerHTML += result
+    let newKey = document.getElementById("special").innerHTML
+    localStorage.setItem("theKey", newKey)
 });
 
 buttonDecimal.addEventListener("click", (event)=>{
@@ -270,7 +326,7 @@ buttonDecimal.addEventListener("click", (event)=>{
     let divAddDecimal = document.getElementById("change").innerHTML
     let decimalSlice = divAddDecimal.slice(-1)
     if (divAddDecimal === "0") {
-        document.getElementById("change").innerHTML = "0"
+        document.getElementById("change").innerHTML += decimal
     } else if (decimalSlice === "+") {
         document.getElementById("change").innerHTML += ""
     } else if (decimalSlice === "-") {
@@ -279,6 +335,8 @@ buttonDecimal.addEventListener("click", (event)=>{
         document.getElementById("change").innerHTML += ""
     } else if (decimalSlice === "*") {
         document.getElementById("change").innerHTML += ""
+    } else if (decimalSlice === "/") {
+        document.getElementById("change").innerHTML += ""
     } else {
         document.getElementById("change").innerHTML += decimal
     }
@@ -286,7 +344,7 @@ buttonDecimal.addEventListener("click", (event)=>{
 
 buttonBack.addEventListener("click", (event)=>{
     let divForBack = document.getElementById("change").innerHTML
-    let backToC = "C"
+    let backToC = "AC"
     if (divForBack === "0") {
         document.getElementById("change").innerHTML = "0"
         document.querySelector(".reset").innerHTML = backToC
@@ -335,11 +393,13 @@ buttonPlusMoins.addEventListener("click", (event)=>{
     let addMoins = "-"
     let divToAddMoins = document.getElementById("change").innerHTML
     let addMoinsSlice = divToAddMoins.slice(-1)
-    let backC = "C"
-    let goToResetAC = "AC"
+    let backC = "AC"
+    let goToResetAC = "C"
     if (divToAddMoins === "0") {
         document.getElementById("change").innerHTML = addMoins
         document.querySelector(".reset").innerHTML = goToResetAC
+    } else if (addMoinsSlice === ".") {
+        document.getElementById("change").innerHTML += ""
     } else if (divToAddMoins === "-") {
         document.getElementById("change").innerHTML = "0"
         document.querySelector(".reset").innerHTML = backC
@@ -361,4 +421,5 @@ buttonPlusMoins.addEventListener("click", (event)=>{
 
 window.onerror = function(event) {
     document.getElementById("change").innerHTML = "Erreur"
+    document.getElementById("special").innerHTML = "Erreur"
 };
