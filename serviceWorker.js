@@ -10,7 +10,9 @@ const assets = [
     "/image/launch-1242x2436.png",
     "/image/launch-1536x2048.png",
     "/image/launch-1668x2224.png",
-    "/image/launch-2048x2732.png"
+    "/image/launch-2048x2732.png",
+    "/image/icon192.png",
+    "/image/icon512.png"
 ];
 
 self.addEventListener("install", installEvent => {

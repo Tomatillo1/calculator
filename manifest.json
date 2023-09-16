@@ -8,39 +8,14 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/image/launch-640x1136.png",
+      "src": "/image/icon192.png",
       "type": "image/png",
-      "sizes": "640x1136"
+      "sizes": "192x192"
     },
     {
-      "src": "/image/launch-750x1294.png",
+      "src": "/image/icon512.png",
       "type": "image/png",
-      "sizes": "750x1294"
-    },
-    {
-      "src": "/image/launch-1125x2436.png.png",
-      "type": "image/png",
-      "sizes": "1125x2436"
-    },
-    {
-      "src": "/image/launch-1242x2436.png",
-      "type": "image/png",
-      "sizes": "1242x2436"
-    },
-    {
-      "src": "/image/launch-1536x2048.png",
-      "type": "image/png",
-      "sizes": "launch-1536x2048.png"
-    },
-    {
-      "src": "/image/launch-1668x2224.png",
-      "type": "image/png",
-      "sizes": "1668x22246"
-    },
-    {
-      "src": "/image/launch-2048x2732.png",
-      "type": "image/png",
-      "sizes": "2048x2732"
+      "sizes": "512x512"
     }
   ]
 }
