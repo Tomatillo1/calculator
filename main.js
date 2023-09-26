@@ -17,6 +17,7 @@ let buttonBack = document.querySelector(".back");
 let buttonFois = document.querySelector(".fois");
 let buttonPlusMoins = document.querySelector(".addMoins");
 let buttonDivision = document.querySelector(".diviser");
+let buttonParenthese = document.querySelector(".parenthese");
 let saveValue = localStorage.getItem("theKey")
 document.getElementById("special").innerHTML = saveValue
 
@@ -191,6 +192,8 @@ buttonPlus.addEventListener("click", (event)=>{
         document.getElementById("change").innerHTML += ""
     } else if (divToChangePlus === "-" ) {
         document.getElementById("change").innerHTML += ""
+    } else if (divToChangePlus === "(" ) {
+        document.getElementById("change").innerHTML += ""
     } else if (plusSlice === "-") {
         let goToArrayPlus = divToChangePlus.split("")
         goToArrayPlus.splice(-1, 1, "+")
@@ -222,6 +225,8 @@ buttonMoins.addEventListener("click", (event)=>{
     } else if(moinsSlice === "-" ) {
         document.getElementById("change").innerHTML += ""
     } else if(moinsSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
+    } else if(moinsSlice === "(" ) {
         document.getElementById("change").innerHTML += ""
     } else if (moinsSlice === "+") {
         let goToArrayMoins = divToChangeMoins.split("")
@@ -257,6 +262,8 @@ buttonFois.addEventListener("click", (event)=>{
         document.getElementById("change").innerHTML += ""
     } else if (divToChangeFois === "-") {
         document.getElementById("change").innerHTML += ""
+    } else if (divToChangeFois === "(") {
+        document.getElementById("change").innerHTML += ""
     } else if (foisSlice === "+") {
         let goToArrayFois = divToChangeFois.split("")
         goToArrayFois.splice(-1, 1, "*")
@@ -290,6 +297,8 @@ buttonDivision.addEventListener("click", (event)=>{
     } else if(divisionSlice === "." ) {
         document.getElementById("change").innerHTML += ""
     } else if (divToChangeDivision === "-") {
+        document.getElementById("change").innerHTML += ""
+    } else if (divToChangeDivision === "(") {
         document.getElementById("change").innerHTML += ""
     } else if (divisionSlice === "+") {
         let goToArrayDivision = divToChangeDivision.split("")
@@ -337,6 +346,8 @@ buttonDecimal.addEventListener("click", (event)=>{
         document.getElementById("change").innerHTML += ""
     } else if (decimalSlice === "/") {
         document.getElementById("change").innerHTML += ""
+    } else if (decimalSlice === "(") {
+        document.getElementById("change").innerHTML += ""
     } else {
         document.getElementById("change").innerHTML += decimal
     }
@@ -381,6 +392,9 @@ buttonBack.addEventListener("click", (event)=>{
     } else if (divForBack === "-") {
         document.getElementById("change").innerHTML = "0"
         document.querySelector(".reset").innerHTML = backToC
+    } else if (divForBack === "(") {
+        document.getElementById("change").innerHTML = "0"
+        document.querySelector(".reset").innerHTML = backToC
     } else {
         let goToArrayBack = divForBack.split ("")
         goToArrayBack.splice(-1)
@@ -418,6 +432,32 @@ buttonPlusMoins.addEventListener("click", (event)=>{
     }
 });
 
+buttonParenthese.addEventListener("click", (event)=>{
+    let divToChangeParenthese = document.getElementById("change").innerHTML
+    let parentheseSlice = divToChangeParenthese.slice(-1)
+    if(divToChangeParenthese === "0") {
+        document.getElementById("change").innerHTML = "("
+        document.querySelector(".reset").innerHTML = "C"
+    } else if (divToChangeParenthese === "Erreur") {
+        document.getElementById("change").innerHTML = "("
+    } else if(parentheseSlice === "/" ) {
+        document.getElementById("change").innerHTML += "("
+    } else if(parentheseSlice === "*" ) {
+        document.getElementById("change").innerHTML += "("
+    } else if(parentheseSlice === "+" ) {
+        document.getElementById("change").innerHTML += "("
+    } else if(parentheseSlice === "-" ) {
+        document.getElementById("change").innerHTML += "("
+    } else if(parentheseSlice === "." ) {
+        document.getElementById("change").innerHTML += ""
+    } else if (parentheseSlice === "(") {
+        document.getElementById("change").innerHTML += ""
+    } else if (parentheseSlice === ")") {
+        document.getElementById("change").innerHTML += ""
+    } else {
+        document.getElementById("change").innerHTML += ")"
+    }
+});
 
 window.onerror = function(event) {
     document.getElementById("change").innerHTML = "Erreur"

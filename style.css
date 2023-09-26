@@ -2,7 +2,6 @@
 
 body {
     background-color: black;
-    overflow: hidden;
     margin: 0;
     height: 100vh;
 }
@@ -15,15 +14,6 @@ body {
     height: 100%;
 }
 
-@media (max-width:1024px){
-    .global {
-        gap:2rem;
-        height: 100%;
-        justify-content: start;
-        padding-top: 2rem;
-    }
-}
-
 .screen{
     width: 60%;
     display: flex;
@@ -32,13 +22,6 @@ body {
     align-items: center;
 }
 
-@media (max-width:1024px){
-    .screen {
-        width: 90%;
-    }
-}
-
-
 .keyBoard {
     justify-content: start;
     width: 60%;
@@ -46,13 +29,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1.75rem;
-}
-
-@media (max-width:1024px){
-    .keyBoard {
-        width: 90%;
-        height: 70%;
-    }
 }
 
 .reset, .addMoins, .back {
@@ -85,7 +61,7 @@ body {
     padding: 0;
 }
 
-.sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule {
+.sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule, .zero, .parenthese {
     background-color: #313131;
     height: 100%;
     width: 90%;
@@ -100,20 +76,8 @@ body {
     padding: 0;
 }
 
-.zero {
-    height: 100%;
-    width: 95%;
-    border: none;
-    background-color: #313131;
-    border-radius: 100px;
-    grid-area: 5/1/5/3;
-    justify-self: center;
-    align-self: center;
-    color: white;
-    font-size: 4rem;
-    font-family: "Poppins", sans-serif;
-    text-align: start;
-    padding-left: 4.25rem;
+.parenthese {
+    font-size: 3rem;
 }
 
 #change {
@@ -136,31 +100,29 @@ body {
     overflow: auto;
 }
 
-@media (max-width:1024px){
-    #change {
-        font-size: 8rem;
+@media screen and (max-width:767px) {
+    .global {
+        gap: 1rem;
+        padding: 0 0.5rem 0 0.5rem;
     }
-}
-
-@media (max-width:1024px){
-    #special {
-        font-size: 3rem;
+    .keyBoard {
+        width: 100%;
+        grid-row-gap:1.5rem;
+        grid-column-gap: 0;
     }
-}
-
-
-@media (max-width:1024px){
-    .reset, .addMoins, .back, .diviser, .fois, .moins, .plus, .egal, .sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule  {
-        width: 12rem;
-        height: 12rem;
-        font-size: 5rem;
+    .reset, .addMoins, .back, .diviser, .fois, .moins, .plus, .egal, .sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule, .zero, .parenthese {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2.5rem;
     }
-}
-
-@media (max-width:1024px){
-    .zero {
-        height: 12rem;
-        font-size: 5rem;
-        padding-left: 4rem;
+    .parenthese {
+        font-size: 2rem;
+    }
+    .screen {
+        width: 100%;
+        gap: 0.5rem;
+    }
+    #special, #change {
+        width: 95%;
     }
 }
