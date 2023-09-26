@@ -102,7 +102,7 @@ body {
 
 @media screen and (max-width:767px) {
     .global {
-        gap: 1rem;
+        gap: 0.25rem;
         padding: 0 0.5rem 0 0.5rem;
     }
     .keyBoard {
@@ -124,5 +124,43 @@ body {
     }
     #special, #change {
         width: 95%;
+    }
+    #change {
+        font-size: 4rem;
+    }
+    #special {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width: 1024px) {
+    .global {
+        gap: 1rem;
+        padding: 0 0.5rem 0 0.5rem;
+    }
+    .keyBoard {
+        width: 100%;
+        grid-row-gap:2.5rem;
+        grid-column-gap: 0;
+    }
+    .reset, .addMoins, .back, .diviser, .fois, .moins, .plus, .egal, .sept, .huit, .neuf, .un, .deux, .trois, .quatre, .cinq, .six, .virgule, .zero, .parenthese {
+        width: 8rem;
+        height: 8rem;
+        font-size: 4.5rem;
+    }
+    .parenthese {
+        font-size: 3rem;
+    }
+    .screen {
+        width: 100%;
+    }
+    #special, #change {
+        width: 90%;
+    }
+    #change {
+        font-size: 4.5rem;
+    }
+    #special {
+        font-size: 2rem;
     }
 }
